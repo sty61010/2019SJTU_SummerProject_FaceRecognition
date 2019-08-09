@@ -1,2 +1,1 @@
-# 2019SJTU_SummerProject_FaceRecognition
 
