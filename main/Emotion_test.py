@@ -27,10 +27,10 @@ frame_window = 10
 emotion_offsets = (20, 40)
 
 # starting lists for calculating modes
-#emotion_window = []
+emotion_window = []
 
 # starting video streaming
-#cv2.namedWindow('window_frame')
+cv2.namedWindow('window_frame')
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -57,7 +57,7 @@ while True:
         emotion_probability = np.max(emotion_prediction)
         emotion_label_arg = np.argmax(emotion_prediction)
         emotion_text = emotion_labels[emotion_label_arg]
-#        emotion_window.append(emotion_text)
+        emotion_window.append(emotion_text)
 
 #        if len(emotion_window) > frame_window:
 #            emotion_window.pop(0)
@@ -76,10 +76,10 @@ while True:
             color = emotion_probability * np.asarray((0, 255, 255))
         else:
             color = emotion_probability * np.asarray((0, 255, 0))
-
         color = color.astype(int)
         color = color.tolist()
-        color=(0,200,200)
+
+#        color=(0,200,200)
         draw_bounding_box(face_coordinates, rgb_image, color)
 #        draw_text(face_coordinates, rgb_image, emotion_mode, color, 0, -45, 1, 1)
         cv2.putText(rgb_image, emotion_text, (x1+5,y2+55), font, 1, (255,255,255), 2)
