@@ -80,8 +80,7 @@ while True:
         color = color.tolist()
 
         draw_bounding_box(face_coordinates, rgb_image, color)
-        draw_text(face_coordinates, rgb_image, emotion_mode,
-                  color, 0, -45, 1, 1)
+        draw_text(face_coordinates, rgb_image, emotion_mode,color,0,-45,1,2)
 
     bgr_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2BGR)
     cv2.imshow('window_frame', bgr_image)
