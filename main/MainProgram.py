@@ -330,7 +330,11 @@ class MainProgram(object):
     # Mask Effect
     def make_Mask(self,frame):
 #        self.Console("Making Mask Effect...")
+<<<<<<< HEAD
 #        frame = resize(frame, width=self.max_width)
+=======
+        frame = resize(frame, width=self.max_width)
+>>>>>>> 2d3b6f05e3feb309fb895f433bcb6192ddb03d82
         img_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         rects = self.detector(img_gray, 0)
         faces = self.get_Orientation(rects, img_gray)
